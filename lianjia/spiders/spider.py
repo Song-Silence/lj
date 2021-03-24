@@ -1,14 +1,14 @@
 from scrapy import Request, Spider
 import json
 from jsonpath import jsonpath
-
-
+from lxml import html
+from lianjia.items import LianjiaItem
 class IhgSpider(Spider):
     name = 'LJ'
 
     def start_requests(self):
         base_url = 'https://wh.lianjia.com/ershoufang/pg'
-        for i in range(1, 2):
+        for i in range(1, 101):
             url = base_url + str(i)
             header = {
                 'Host': 'wh.lianjia.com',
@@ -26,15 +26,22 @@ class IhgSpider(Spider):
             yield Request(url=url, headers=header, method='GET')
 
     def parse(self, response):
-        print(response.xpath(
-            '//ul[@class="sellListContent"]//div[@class="title"]/a/text()'))
-        print(response.xpath(
-            '//ul[@class="sellListContent"]//div[@class="positionInfo"]//text()'))
-        print(response.xpath(
-                  '//ul[@class="sellListContent"]//div[@class="houseInfo"]//text()'))
-        print(response.xpath(
-                        '//ul[@class="sellListContent"]//div[@class="followInfo"]//text()'))
-        print(response.xpath(
-            '//ul[@class="sellListContent"]//div[@class="priceInfo"]/div[@class="totalPrice"]/span/text()'))
-        print(response.xpath(
-            '//ul[@class="sellListContent"]//div[@class="priceInfo"]/div[@class="unitPrice"]/span/text()'))
+        lianjia_item = LianjiaItem()
+        new_text = response.xpath('//ul[@class="sellListContent"]/li')
+        for item in new_text:
+            text = item.extract()
+            nodes = html.fromstring(text)
+            title = nodes.xpath('//div[@class="title"]/a/text()')
+            position = nodes.xpath('//div[@class="positionInfo"]//text()')
+            house = nodes.xpath('//div[@class="houseInfo"]//text()')
+            follow = nodes.xpath('//div[@class="followInfo"]//text()')
+            total = nodes.xpath('//div[@class="priceInfo"]/div[@class="totalPrice"]/span/text()')
+            unit = nodes.xpath('//div[@class="priceInfo"]/div[@class="unitPrice"]/span/text()')
+            print(title, position, house, follow, total, unit)
+            lianjia_item['title'] = title
+            lianjia_item['position'] = position
+            lianjia_item['house'] = house
+            lianjia_item['follow'] = follow
+            lianjia_item['total'] = total
+            lianjia_item['unit'] = unit
+            yield lianjia_item
