@@ -63,9 +63,9 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'lianjia.pipelines.LianjiaPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'lianjia.pipelines.LianjiaPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -90,6 +90,6 @@ ROBOTSTXT_OBEY = False
 DOWNLOAD_DELAY = 2
 RANDOMIZE_DOWNLOAD_DELAY = True
 CONCURRENT_REQUESTS = 20
-LOG_LEVEL = 'DEBUG'
-log_file_path = 'test.log'
-LOG_FILE = log_file_path
+# LOG_LEVEL = 'DEBUG'
+# log_file_path = 'test.log'
+# LOG_FILE = log_file_path

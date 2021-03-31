@@ -3,6 +3,8 @@ import json
 from jsonpath import jsonpath
 from lxml import html
 from lianjia.items import LianjiaItem
+
+
 class IhgSpider(Spider):
     name = 'LJ'
 
@@ -35,13 +37,41 @@ class IhgSpider(Spider):
             position = nodes.xpath('//div[@class="positionInfo"]//text()')
             house = nodes.xpath('//div[@class="houseInfo"]//text()')
             follow = nodes.xpath('//div[@class="followInfo"]//text()')
-            total = nodes.xpath('//div[@class="priceInfo"]/div[@class="totalPrice"]/span/text()')
-            unit = nodes.xpath('//div[@class="priceInfo"]/div[@class="unitPrice"]/span/text()')
-            print(title, position, house, follow, total, unit)
-            lianjia_item['title'] = title
-            lianjia_item['position'] = position
-            lianjia_item['house'] = house
-            lianjia_item['follow'] = follow
-            lianjia_item['total'] = total
-            lianjia_item['unit'] = unit
+            total = nodes.xpath(
+                '//div[@class="priceInfo"]/div[@class="totalPrice"]/span/text()')
+            unit = nodes.xpath(
+                '//div[@class="priceInfo"]/div[@class="unitPrice"]/span/text()')
+
+            follow = follow[0].split('/')
+            time = follow[1]
+            follow = follow[0]
+            if '一年前发布' in time:
+                time = '360'
+            elif '个月以前发布' in time:
+                time = int(time.split('个月以前发布')[0])*30
+            elif '天以前发布' in time:
+                time = time.split('天以前发布')[0]
+            follow = follow.split('人关注')[0]
+            lianjia_item['title'] = title[0]
+            lianjia_item['position'] = position[0]
+            lianjia_item['follow'] = int(follow)
+            lianjia_item['time'] = int(time)
+            lianjia_item['total'] = float(total[0])
+            unit = unit[0].replace('单价', '')
+            unit = unit.replace('元/平米', '')
+            lianjia_item['unit'] = float(unit)
+            house_list = house[0].split('|')
+            
+            for i in range(7-len(house_list)):
+                house_list.append('暂无数据')
+            lianjia_item['houseIntroduction'], lianjia_item['houseRange'], lianjia_item['houseDirection'], lianjia_item[
+                'houseDecorate'], lianjia_item['houseHeight'], lianjia_item['houseAge'], lianjia_item['houseType'] = house_list
+            
+            if '年建' in lianjia_item['houseAge']:
+                lianjia_item['houseAge'] = lianjia_item['houseAge'].split('年建')[
+                    0]
+            else:
+                lianjia_item['houseType'] = lianjia_item['houseAge']
+                lianjia_item['houseAge'] = '暂无数据'
+
             yield lianjia_item

@@ -1,0 +1,278 @@
+2021-03-31 21:35:27 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: lianjia)
+2021-03-31 21:35:27 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)], pyOpenSSL 20.0.1 (OpenSSL 1.1.1j  16 Feb 2021), cryptography 3.4.6, Platform Windows-10-10.0.18362-SP0
+2021-03-31 21:35:27 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2021-03-31 21:35:27 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'lianjia',
+ 'CONCURRENT_REQUESTS': 20,
+ 'DOWNLOAD_DELAY': 2,
+ 'LOG_FILE': 'test.log',
+ 'NEWSPIDER_MODULE': 'lianjia.spiders',
+ 'RETRY_TIMES': 3,
+ 'SPIDER_MODULES': ['lianjia.spiders']}
+2021-03-31 21:35:27 [scrapy.extensions.telnet] INFO: Telnet Password: e56fb25e673eb18b
+2021-03-31 21:35:27 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-03-31 21:35:27 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-03-31 21:35:27 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-03-31 21:35:27 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2021-03-31 21:35:27 [scrapy.core.engine] INFO: Spider opened
+2021-03-31 21:35:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-03-31 21:35:27 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-03-31 21:35:27 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://wh.lianjia.com/ershoufang/pg1/> from <GET https://wh.lianjia.com/ershoufang/pg1>
+2021-03-31 21:35:29 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://wh.lianjia.com/ershoufang/pg2/> from <GET https://wh.lianjia.com/ershoufang/pg2>
+2021-03-31 21:35:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://wh.lianjia.com/ershoufang/pg1/> (referer: None)
+2021-03-31 21:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://wh.lianjia.com/ershoufang/pg1/>
+{'follow': ['9人关注 / 6天以前发布'],
+ 'houseAge': ' 2015年建 ',
+ 'houseDecorate': ' 简装 ',
+ 'houseDirection': ' 南 ',
+ 'houseHeight': ' 低楼层(共34层) ',
+ 'houseIntroduction': '3室1厅 ',
+ 'houseRange': ' 95.63平米 ',
+ 'houseType': ' 板塔结合',
+ 'position': ['光明上海公馆 ', '   -  ', '塔子湖', ' '],
+ 'title': ['小区中间楼栋赏公园景观，地铁3号线和8号线出行老证'],
+ 'total': ['177'],
+ 'unit': ['单价18509元/平米']}
+2021-03-31 21:35:31 [scrapy.core.scraper] ERROR: Spider error processing <GET https://wh.lianjia.com/ershoufang/pg1/> (referer: None)
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "d:\python\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "d:\python\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "C:\Users\Eugene\Desktop\lj\lianjia\spiders\spider.py", line 45, in parse
+    lianjia_item['houseIntroduction'], lianjia_item['houseRange'], lianjia_item['houseDirection'], lianjia_item['houseDecorate'], lianjia_item['houseHeight'], lianjia_item['houseAge'], lianjia_item['houseType'] = house[0].split('|')
+ValueError: not enough values to unpack (expected 7, got 6)
+2021-03-31 21:35:32 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2021-03-31 21:35:32 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2021-03-31 21:35:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://wh.lianjia.com/ershoufang/pg2/> (referer: None)
+2021-03-31 21:35:33 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2021-03-31 21:35:39 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: lianjia)
+2021-03-31 21:35:39 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)], pyOpenSSL 20.0.1 (OpenSSL 1.1.1j  16 Feb 2021), cryptography 3.4.6, Platform Windows-10-10.0.18362-SP0
+2021-03-31 21:35:39 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2021-03-31 21:35:39 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'lianjia',
+ 'CONCURRENT_REQUESTS': 20,
+ 'DOWNLOAD_DELAY': 2,
+ 'LOG_FILE': 'test.log',
+ 'NEWSPIDER_MODULE': 'lianjia.spiders',
+ 'RETRY_TIMES': 3,
+ 'SPIDER_MODULES': ['lianjia.spiders']}
+2021-03-31 21:35:39 [scrapy.extensions.telnet] INFO: Telnet Password: 364f5a28db388981
+2021-03-31 21:35:39 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-03-31 21:35:39 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-03-31 21:35:39 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-03-31 21:35:39 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2021-03-31 21:35:39 [scrapy.core.engine] INFO: Spider opened
+2021-03-31 21:35:39 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-03-31 21:35:39 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-03-31 21:35:40 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://wh.lianjia.com/ershoufang/pg1/> from <GET https://wh.lianjia.com/ershoufang/pg1>
+2021-03-31 21:35:42 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://wh.lianjia.com/ershoufang/pg2/> from <GET https://wh.lianjia.com/ershoufang/pg2>
+2021-03-31 21:35:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://wh.lianjia.com/ershoufang/pg1/> (referer: None)
+2021-03-31 21:35:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://wh.lianjia.com/ershoufang/pg1/>
+{'follow': ['9人关注 / 6天以前发布'],
+ 'houseAge': ' 2015年建 ',
+ 'houseDecorate': ' 简装 ',
+ 'houseDirection': ' 南 ',
+ 'houseHeight': ' 低楼层(共34层) ',
+ 'houseIntroduction': '3室1厅 ',
+ 'houseRange': ' 95.63平米 ',
+ 'houseType': ' 板塔结合',
+ 'position': ['光明上海公馆 ', '   -  ', '塔子湖', ' '],
+ 'title': ['小区中间楼栋赏公园景观，地铁3号线和8号线出行老证'],
+ 'total': ['177'],
+ 'unit': ['单价18509元/平米']}
+2021-03-31 21:35:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://wh.lianjia.com/ershoufang/pg1/> (referer: None)
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "d:\python\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "d:\python\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "C:\Users\Eugene\Desktop\lj\lianjia\spiders\spider.py", line 45, in parse
+    lianjia_item['houseIntroduction'], lianjia_item['houseRange'], lianjia_item['houseDirection'], lianjia_item['houseDecorate'], lianjia_item['houseHeight'], lianjia_item['houseAge'], lianjia_item['houseType'] = house[0].split('|')
+ValueError: not enough values to unpack (expected 7, got 6)
+2021-03-31 21:35:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://wh.lianjia.com/ershoufang/pg2/> (referer: None)
+2021-03-31 21:35:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://wh.lianjia.com/ershoufang/pg2/>
+{'follow': ['12人关注 / 7天以前发布'],
+ 'houseAge': ' 2014年建 ',
+ 'houseDecorate': ' 精装 ',
+ 'houseDirection': ' 南 ',
+ 'houseHeight': ' 低楼层(共32层) ',
+ 'houseIntroduction': '2室2厅 ',
+ 'houseRange': ' 85.38平米 ',
+ 'houseType': ' 板楼',
+ 'position': ['泛海国际悦海园 ', '   -  ', 'CBD西北湖', ' '],
+ 'title': ['舒适楼层，良好采光，证满两年，无贷款。'],
+ 'total': ['270'],
+ 'unit': ['单价31624元/平米']}
+2021-03-31 21:35:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://wh.lianjia.com/ershoufang/pg2/>
+{'follow': ['9人关注 / 14天以前发布'],
+ 'houseAge': ' 2008年建 ',
+ 'houseDecorate': ' 毛坯 ',
+ 'houseDirection': ' 东南 ',
+ 'houseHeight': ' 高楼层(共11层) ',
+ 'houseIntroduction': '3室2厅 ',
+ 'houseRange': ' 89.1平米 ',
+ 'houseType': ' 板楼',
+ 'position': ['丽华苑 ', '   -  ', '团结大道', ' '],
+ 'title': ['丽华苑低总价中间楼层三房 自己随意装修 看房方便'],
+ 'total': ['156'],
+ 'unit': ['单价17509元/平米']}
+2021-03-31 21:35:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://wh.lianjia.com/ershoufang/pg2/>
+{'follow': ['1人关注 / 4天以前发布'],
+ 'houseAge': ' 2006年建 ',
+ 'houseDecorate': ' 精装 ',
+ 'houseDirection': ' 东南 ',
+ 'houseHeight': ' 低楼层(共32层) ',
+ 'houseIntroduction': '2室1厅 ',
+ 'houseRange': ' 79.53平米 ',
+ 'houseType': ' 塔楼',
+ 'position': ['长源假日港湾 ', '   -  ', '金银湖', ' '],
+ 'title': ['精装两房 老证 业主诚心出售 看房方便'],
+ 'total': ['92'],
+ 'unit': ['单价11568元/平米']}
+2021-03-31 21:35:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://wh.lianjia.com/ershoufang/pg2/>
+{'follow': ['5人关注 / 7天以前发布'],
+ 'houseAge': ' 2013年建 ',
+ 'houseDecorate': ' 简装 ',
+ 'houseDirection': ' 南 ',
+ 'houseHeight': ' 低楼层(共45层) ',
+ 'houseIntroduction': '3室1厅 ',
+ 'houseRange': ' 89.61平米 ',
+ 'houseType': ' 板塔结合',
+ 'position': ['福星惠誉国际城三期 ', '   -  ', '沙湖', ' '],
+ 'title': ['徐东内环，地铁口，正规三居居室，朝南采光楼层好'],
+ 'total': ['265'],
+ 'unit': ['单价29573元/平米']}
+2021-03-31 21:35:47 [scrapy.core.scraper] ERROR: Spider error processing <GET https://wh.lianjia.com/ershoufang/pg2/> (referer: None)
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "d:\python\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "d:\python\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "d:\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\python\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "C:\Users\Eugene\Desktop\lj\lianjia\spiders\spider.py", line 45, in parse
+    lianjia_item['houseIntroduction'], lianjia_item['houseRange'], lianjia_item['houseDirection'], lianjia_item['houseDecorate'], lianjia_item['houseHeight'], lianjia_item['houseAge'], lianjia_item['houseType'] = house[0].split('|')
+ValueError: not enough values to unpack (expected 7, got 6)
+2021-03-31 21:35:47 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-03-31 21:35:47 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2682,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 4,
+ 'downloader/response_bytes': 71047,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/301': 2,
+ 'elapsed_time_seconds': 7.907788,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 3, 31, 13, 35, 47, 856261),
+ 'item_scraped_count': 5,
+ 'log_count/DEBUG': 9,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'spider_exceptions/ValueError': 2,
+ 'start_time': datetime.datetime(2021, 3, 31, 13, 35, 39, 948473)}
+2021-03-31 21:35:47 [scrapy.core.engine] INFO: Spider closed (finished)
